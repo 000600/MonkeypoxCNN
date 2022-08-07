@@ -87,7 +87,7 @@ print('\nValidation Data Shape:', x_val.shape)
 print('Validation Labels Shape:', y_val.shape)
 
 # Set up epochs and batch size
-epochs = 9
+epochs = 10
 batch_size = 32
 
 # Initialize SGD Optimizer
