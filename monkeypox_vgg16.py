@@ -149,8 +149,8 @@ plt.legend()
 plt.show()
 
 # Visualize AUC and validation AUC
-auc = history_dict['auc_2']
-val_auc = history_dict['val_auc_2']
+auc = history_dict['auc']
+val_auc = history_dict['val_auc']
 
 plt.plot(epoch_list, auc, label = 'Training AUC')
 plt.plot(epoch_list, val_auc, label =' Validation AUC')
@@ -173,6 +173,7 @@ predictions = model.predict(x_train)
 # Loop through x_test to display the image, the model's prediction on that image, and the actual label of that image
 for index in range(num_viewed_inputs):
   i = (-(index) if index % 2 == 0 else index) # Get alternate indexes so that the model predicts on both possible input cases
+  
   # Get image, prediction, and label
   image = x_test[i]
   pred_prob = float(predictions[i]) # Model's predicted probability that the image is of a certain class
