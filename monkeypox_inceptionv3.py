@@ -10,7 +10,6 @@ from tensorflow.keras.optimizers import SGD
 from tensorflow.keras.callbacks import EarlyStopping
 from tensorflow.keras.losses import CategoricalCrossentropy
 from tensorflow.keras.metrics import CategoricalAccuracy, AUC
-from tensorflow.keras.applications.vgg16 import VGG16
 from tensorflow.keras.applications import InceptionV3
 import numpy as np
 import matplotlib.pyplot as plt
