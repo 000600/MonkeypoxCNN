@@ -5,13 +5,10 @@ import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Flatten, Dense, Dropout, BatchNormalization, GlobalAveragePooling2D
-from tensorflow.keras.layers.experimental.preprocessing import RandomFlip
-from tensorflow.keras.optimizers import SGD, Adam
+from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
-from tensorflow.keras.losses import CategoricalCrossentropy
-from tensorflow.keras.metrics import CategoricalAccuracy, AUC
-from tensorflow.keras.applications.vgg16 import VGG16
-from tensorflow.keras.applications import InceptionV3, ResNet50V2
+from tensorflow.keras.metrics import AUC
+from tensorflow.keras.applications import ResNet50V2
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -107,8 +104,10 @@ model.add(base)
 
 # Hidden layers
 model.add(GlobalAveragePooling2D())
+
 model.add(Dense(256, activation = 'relu'))
 model.add(BatchNormalization())
+
 model.add(Dense(128, activation = 'relu'))
 model.add(BatchNormalization())
 
