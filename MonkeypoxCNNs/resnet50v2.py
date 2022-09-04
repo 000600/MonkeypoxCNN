@@ -16,9 +16,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Define paths
-train_path = '/content/drive/MyDrive/ML/Monkeypox-Data/Train/'
-test_path = '/content/drive/MyDrive/ML/Monkeypox-Data/Test/'
-val_path = '/content/drive/MyDrive/ML/Monkeypox-Data/Val/'
+train_path = ' < PATH TRAINING DATA > '
+test_path = ' < PATH TO TESTING DATA > '
+val_path = ' < PATH TO VALIDATION DATA > '
 
 # Define path specification list
 path_list = ['Monkeypox', 'Others']
