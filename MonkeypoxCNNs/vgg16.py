@@ -4,14 +4,12 @@ from PIL import Image
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Flatten, Dense, Dropout, BatchNormalization, GlobalAveragePooling2D
+from tensorflow.keras.layers import Flatten, Dense, Dropout
 from tensorflow.keras.layers.experimental.preprocessing import RandomFlip
 from tensorflow.keras.optimizers import SGD
 from tensorflow.keras.callbacks import EarlyStopping
-from tensorflow.keras.losses import CategoricalCrossentropy
-from tensorflow.keras.metrics import CategoricalAccuracy, AUC
+from tensorflow.keras.metrics import AUC
 from tensorflow.keras.applications.vgg16 import VGG16
-from tensorflow.keras.applications import InceptionV3, ResNet50V2
 import numpy as np
 import matplotlib.pyplot as plt
 
