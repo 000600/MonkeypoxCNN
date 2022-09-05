@@ -5,6 +5,7 @@ import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Flatten, Dense, Dropout, BatchNormalization, GlobalAveragePooling2D
+from tensorflow.keras.layers.experimental.preprocessing import RandomFlip
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
 from tensorflow.keras.metrics import AUC
@@ -99,7 +100,8 @@ for layer in base.layers:
 # Create model
 model = Sequential()
 
-# Add base model
+# Add base model and data augmentation layer
+model.add(RandomFlip('horizontal'))
 model.add(base)
 
 # Hidden layers
