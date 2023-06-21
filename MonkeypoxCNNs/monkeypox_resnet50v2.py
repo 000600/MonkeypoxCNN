@@ -92,10 +92,10 @@ batch_size = 32
 # Initialize SGD Optimizer
 opt = Adam(learning_rate = 0.001)
 
-# Initialize base model (InceptionV3)
+# Initialize base model (ResNet50v2)
 base = ResNet50V2(include_top = False, input_shape = (128, 128, 3))
 for layer in base.layers:
-  layer.trainable = False # Make InceptionV3 layers non-trainable so that training goes faster and so that the training process doesn't alter the already tuned values
+  layer.trainable = False # Make ResNet50v2 layers non-trainable so that training goes faster and so that the training process doesn't alter the already tuned values
 
 # Create model
 model = Sequential()
