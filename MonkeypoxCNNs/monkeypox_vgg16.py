@@ -92,10 +92,10 @@ batch_size = 32
 # Initialize SGD Optimizer
 opt = SGD(learning_rate = 0.001)
 
-# Initialize base model (InceptionV3)
+# Initialize base model (VGG16)
 base = VGG16(include_top = False, input_shape = (128, 128, 3))
 for layer in base.layers:
-  layer.trainable = False # Make InceptionV3 layers non-trainable so that training goes faster and so that the training process doesn't alter the already tuned values
+  layer.trainable = False # Make VGG16 layers non-trainable so that training goes faster and so that the training process doesn't alter the already tuned values
 
 # Create model
 model = Sequential()
@@ -164,7 +164,6 @@ test_loss, test_acc, test_auc = model.evaluate(x_test, y_test, verbose = 0) # Ch
 print(f'\nTest accuracy: {test_acc * 100}%')
 
 # View model's predictions compared to actual labels
-
 num_viewed_inputs = 10 # Change this number to view more inputs and corresponding predictions and labels
 
 # Get predictions
