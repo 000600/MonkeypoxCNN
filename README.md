@@ -3,7 +3,7 @@
 ## The Neural Networks
 These convolutional neural networks classify whether or not a skin sample possesses monkeypox based on an image of the skin sample. The models will predict a value close to 0 if the sample is predicted to be of monkeypox and a 1 if the sample is not predicted to be monkeypox. Since all of the models predict binary categorical values, each uses a binary crossentropy loss function and has 1 output neuron. They use standard SGD and Adam optimizers with a learning rate of 0.001 and have dropout layers to prevent overfitting.
 
-1. The first model, found in the **inceptionv3.py** file, is a CNN that uses Tensorflow's **InceptionV3** as a base model (these layers are untrained in the model). It uses an SGD optimizer with an architecture consisting of:
+1. The first model, found in the **monkeypox_inceptionv3.py** file, is a CNN that uses Tensorflow's **InceptionV3** as a base model (these layers are untrained in the model). It uses an SGD optimizer with an architecture consisting of:
     - 1 Horizontal random flip layer (for image preprocessing)
     - 1 InceptionV3 base model (with an input shape of (128, 128, 3))
     - 1 Flatten layer
@@ -11,7 +11,7 @@ These convolutional neural networks classify whether or not a skin sample posses
     - 1 Hidden layer (with 256 neurons and a ReLU activation function)
     - 1 Output layer (with 1 output neuron and a sigmoid activation function)
 
-2. The second model, found in the **vgg16.py** file, uses the pre-trained VGG16 base provided by Tensorflow (these layers are untrained in the model) and only uses a horizontal flip layer to augment the data. It uses an SGD optimizer and has an architecture consisting of:
+2. The second model, found in the **monkeypox_vgg16.py** file, uses the pre-trained VGG16 base provided by Tensorflow (these layers are untrained in the model) and only uses a horizontal flip layer to augment the data. It uses an SGD optimizer and has an architecture consisting of:
     - 1 Horizontal random flip layer (for image preprocessing)
     - 1 VGG16 base model (with an input shape of (128, 128, 3))
     - 1 Flatten layer
@@ -19,7 +19,7 @@ These convolutional neural networks classify whether or not a skin sample posses
     - 1 Hidden layer (with 256 neurons and a ReLU activation function)
     - 1 Output layer (with 1 output neuron and a sigmoid activation function)
 
-3. The third model, found in the **resenet50v2.py** file, uses the pre-trained ResNet50V2 base provided by Tensorflow (these layers are untrained in the model) and doesn't use any image augmentation techniques. It uses an Adam optimizer and has an architecture consisting of:
+3. The third model, found in the **monkeypox_resenet50v2.py** file, uses the pre-trained ResNet50V2 base provided by Tensorflow (these layers are untrained in the model) and doesn't use any image augmentation techniques. It uses an Adam optimizer and has an architecture consisting of:
     - 1 Horizontal random flip layer (for image preprocessing)
     - 1 Resnet50V2 base model (with an input shape of (128, 128, 3))
     - 1 Global average pooling 2D layer
